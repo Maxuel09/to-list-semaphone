@@ -58,7 +58,7 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
 
         let iconDelete = document.createElement('span');
         iconDelete.className = 'material-symbols-outlined';
-        iconDelete.textContent = 'delete';
+        iconDelete.textContent = 'backspace';
         iconDelete.style.color = 'red';
 
 
