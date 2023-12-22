@@ -50,7 +50,7 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
         });
 
         editButton.addEventListener('keydown', function (event) {
-            if(event.key === 'Enter'){
+            if (event.key === 'Enter') {
                 span.contentEditable = "false";
             }
         })
@@ -58,7 +58,7 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
 
         let iconDelete = document.createElement('span');
         iconDelete.className = 'material-symbols-outlined';
-        iconDelete.textContent = 'backspace';
+        iconDelete.textContent = 'delete';
         iconDelete.style.color = 'red';
 
 
@@ -75,6 +75,67 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
 
         todoList.appendChild(li);
         document.getElementById('todoInput').value = '';
+
+        let iconMenu = document.createElement('span');
+        iconMenu.className = 'material-symbols-outlined';
+        iconMenu.textContent = 'menu';
+        iconMenu.style.color = '#919190';
+
+        let menuButton = document.createElement('button');
+        menuButton.className = 'btn';
+        menuButton.style.padding = '0';
+
+        menuButton.addEventListener('click', function () {
+            let menuDiv = document.createElement('ul');
+            menuDiv.className = 'ml-5 list-group';
+            menuDiv.style.position = 'absolute';
+            menuDiv.style.left = '95%';
+            menuDiv.style.top = '0%'; // Ajusta la posición vertical del menú para que aparezca debajo del botón
+
+            // Crear elementos de menú
+            let menuDate = document.createElement('li');
+            menuDate.className = 'list-group-item';
+            menuDate.textContent = 'Date';
+
+            menuDate.addEventListener('click', function () {
+                let menuDate = document.createElement('input');
+                menuDate.type = 'date';
+                menuDate.className = 'form-control';
+            })
+
+
+            let liMenu2 = document.createElement('li');
+            liMenu2.className = 'list-group-item';
+            liMenu2.textContent = 'Opción 2';
+
+            let liMenu3 = document.createElement('li');
+            liMenu3.className = 'list-group-item';
+            liMenu3.textContent = 'Opción 3';
+
+            // Agregar elementos al menú
+            menuDiv.appendChild(menuDate);
+            menuDiv.appendChild(liMenu2);
+            menuDiv.appendChild(liMenu3);
+
+
+            menuButton.appendChild(menuDiv);
+        });
+
+
+        menuButton.appendChild(iconMenu);
+
+
+        li.appendChild(menuButton);
+
+
+        buttonsDiv.appendChild(menuButton);
+        menuButton.appendChild(iconMenu);
+        li.appendChild(buttonsDiv);
+
+
+
+
+
     }
 
 });
