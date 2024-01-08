@@ -1,4 +1,28 @@
+let iconPalet = document.createElement('button');
+iconPalet.className = 'material-symbols-outlined';
+iconPalet.textContent = 'color_lens';
+iconPalet.style.width = '50px';
+iconPalet.style.height = '50px';
+iconPalet.style.borderRadius = '50%';
+iconPalet.style.border = 'none';
+iconPalet.style.position = 'absolute';
+iconPalet.style.top = '10px';
 
+
+let colorPicker = document.createElement('input');
+colorPicker.type = 'color';
+colorPicker.style.display = 'none'; // Ocultar por defecto
+
+iconPalet.addEventListener('click', function () {
+    colorPicker.click(); // Simular clic en el colorPicker
+});
+
+colorPicker.addEventListener('input', function () {
+    document.body.style.backgroundColor = colorPicker.value;
+});
+
+document.body.appendChild(iconPalet);
+document.body.appendChild(colorPicker);
 
 document.getElementById('todoForm').addEventListener('submit', function (list) {
     list.preventDefault();
