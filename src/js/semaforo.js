@@ -1,3 +1,27 @@
+let menuInput = document.getElementById('menuInput');
+
+menuInput.addEventListener('click', function () {
+    let dropdownMenu = document.createElement('div');
+    dropdownMenu.classList.add('dropdown-menu');
+
+    let opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
+
+    opciones.forEach(function (opcion) {
+        let item = document.createElement('a');
+        item.classList.add('dropdown-item');
+        item.href = '#';
+        item.textContent = opcion;
+        dropdownMenu.appendChild(item);
+    });
+
+    menuInput.parentNode.appendChild(dropdownMenu);
+});
+
+
+
+
+
+
 let iconPalet = document.createElement('button');
 iconPalet.className = 'material-symbols-outlined';
 iconPalet.textContent = 'color_lens';
@@ -5,7 +29,7 @@ iconPalet.style.width = '50px';
 iconPalet.style.height = '50px';
 iconPalet.style.borderRadius = '50%';
 iconPalet.style.border = 'none';
-iconPalet.style.position = 'absolute';
+iconPalet.style.position = 'fixed';
 iconPalet.style.top = '10px';
 
 
@@ -23,6 +47,8 @@ colorPicker.addEventListener('input', function () {
 
 document.body.appendChild(iconPalet);
 document.body.appendChild(colorPicker);
+
+
 
 document.getElementById('todoForm').addEventListener('submit', function (list) {
     list.preventDefault();
@@ -43,12 +69,23 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
         checkBox.addEventListener('change', function () {
             if (this.checked) {
                 span.style.textDecoration = 'line-through';
+                let completedText = document.createElement('span');
+                completedText.textContent = ' Completada';
+                completedText.style.color = 'green'; // Cambiar el color si quieres
+                completedText.classList.add('completed-text'); // Agregar clase para identificar el texto
+                li.appendChild(completedText);
             } else {
                 span.style.textDecoration = 'none';
+                let completedText = li.querySelector('.completed-text');
+                if (completedText) {
+                    li.removeChild(completedText);
+                }
             }
+            buttonsDiv.appendChild(completedText)
         });
 
         li.appendChild(checkBox);
+        
 
 
 
@@ -74,7 +111,7 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
         });
 
         editButton.addEventListener('keydown', function (event) {
-            if(event.key === 'Enter'){
+            if (event.key === 'Enter') {
                 span.contentEditable = "false";
             }
         })
@@ -99,6 +136,10 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
 
         todoList.appendChild(li);
         document.getElementById('todoInput').value = '';
+
+
+
+
     }
 
 });
