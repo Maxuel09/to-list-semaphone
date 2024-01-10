@@ -1,5 +1,7 @@
-
-
+let menuInput = document.getElementById('menuInput');
+menuInput.addEventListener('click', function () {
+    document.getElementById('dropdownMenu').classList.toggle('show');
+})
 
 let iconPalet = document.createElement('button');
 iconPalet.className = 'material-symbols-outlined';
