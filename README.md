@@ -12,7 +12,7 @@
 para obtener el codigo puedes hacer un hacer *fork*
 y clonar el codigo
 
-*Entra al link que te aparece en el repositorio*
+*Entra al <a href="https://maxuel09.github.io/to-list-semaphone/src/index.html">link</a> que te aparece en el repositorio*
 
 ## Authors
 
