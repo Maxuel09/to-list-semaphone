@@ -1,24 +1,3 @@
-let menuInput = document.getElementById('menuInput');
-
-menuInput.addEventListener('click', function () {
-    let dropdownMenu = document.createElement('div');
-    dropdownMenu.classList.add('dropdown-menu');
-
-    let opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
-
-    opciones.forEach(function (opcion) {
-        let item = document.createElement('a');
-        item.classList.add('dropdown-item');
-        item.href = '#';
-        item.textContent = opcion;
-        dropdownMenu.appendChild(item);
-    });
-
-    menuInput.parentNode.appendChild(dropdownMenu);
-});
-
-
-
 
 
 

@@ -25,9 +25,15 @@
             <div class="col-md-12">
                 <form id="todoForm">
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button class="material-symbols-outlined btn btn-light p-1" id="menuInput">drag_handle</button>
+                    <div class="input-group-prepend">
+                        <button class="material-symbols-outlined btn btn-light p-1" id="menuInput">drag_handle</button>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <button class="dropdown-item" onclick="ordenar()">Ordenar</button>
+                            <a class="dropdown-item" href="#"></a>
+                            <a class="dropdown-item" href="#"></a>
                         </div>
+                    </div>
+
                         <input type="text" class="form-control p-4" id="todoInput" placeholder="Agregar nueva tarea">
                         <div class="input-group-append">
                             <button class="btn btn-success" type="submit">Agregar</button>
