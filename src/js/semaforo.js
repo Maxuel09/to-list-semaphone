@@ -1,7 +1,7 @@
-let menuInput = document.getElementById('menuInput');
-menuInput.addEventListener('click', function () {
-    document.getElementById('dropdownMenu').classList.toggle('show');
-})
+// let menuInput = document.getElementById('menuInput');
+// menuInput.addEventListener('click', function () {
+//     document.getElementById('dropdownMenu').classList.toggle('show');
+// })
 
 let iconPalet = document.createElement('button');
 iconPalet.className = 'material-symbols-outlined';
@@ -16,10 +16,10 @@ iconPalet.style.top = '10px';
 
 let colorPicker = document.createElement('input');
 colorPicker.type = 'color';
-colorPicker.style.display = 'none'; // Ocultar por defecto
+colorPicker.style.display = 'none';
 
 iconPalet.addEventListener('click', function () {
-    colorPicker.click(); // Simular clic en el colorPicker
+    colorPicker.click(); 
 });
 
 colorPicker.addEventListener('input', function () {
@@ -52,8 +52,8 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
                 span.style.textDecoration = 'line-through';
                 let completedText = document.createElement('span');
                 completedText.textContent = ' Completada';
-                completedText.style.color = 'green'; // Cambiar el color si quieres
-                completedText.classList.add('completed-text'); // Agregar clase para identificar el texto
+                completedText.style.color = 'green'; 
+                completedText.classList.add('completed-text');
                 li.appendChild(completedText);
             } else {
                 span.style.textDecoration = 'none';
@@ -86,6 +86,7 @@ document.getElementById('todoForm').addEventListener('submit', function (list) {
         let editButton = document.createElement('button');
         editButton.className = 'btn';
         editButton.appendChild(iconEdit);
+        
         editButton.addEventListener('click', function () {
             span.contentEditable = "true";
             span.focus();
